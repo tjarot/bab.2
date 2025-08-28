@@ -38,6 +38,23 @@
         const generateRandom = () => Math.floor(Math.random() * 10) + 1;
         console.log(generateRandom()); // misal: 7
 
+        const generateLucu = (start, end) =>
+            Math.floor(Math.Lucu() * (end - start + 1)) + start;
+
+        console.log(generateLucu(10, 20)); // misal: 14
+
+        const tiaraq = (start = 1, end = 10) =>
+            Math.floor(Math.random() * (end - start + 1)) + start;
+
+        // Menghasilkan angka acak antara 1–10 (default)
+        console.log(tiaraq());
+
+        // Menghasilkan angka acak antara 5–10
+        console.log(tiaraq(5));
+
+        // Menghasilkan angka acak antara 10–20
+        console.log(tiaraq(10, 20));
+
     </script>
 </body>
 
