@@ -1,0 +1,246 @@
+<!-- <!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kalkulator JavaScript</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        background: #f3f4f6;
+    }
+    .calculator {
+        width: 260px;
+        background: #222;
+        border-radius: 12px;
+        padding: 20px;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    }
+    .display {
+        width: 100%;
+        height: 50px;
+        background: #333;
+        color: #fff;
+        font-size: 1.5em;
+        text-align: right;
+        padding: 10px;
+        border-radius: 8px;
+        margin-bottom: 15px;
+        box-sizing: border-box;
+    }
+    .buttons {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 10px;
+    }
+    button {
+        height: 50px;
+        font-size: 1.2em;
+        border: none;
+        border-radius: 8px;
+        background: #444;
+        color: #fff;
+        cursor: pointer;
+        transition: 0.2s;
+    }
+    button:hover {
+        background: #555;
+    }
+    .equal {
+        grid-column: span 2;
+        background: #f39c12;
+    }
+    .equal:hover {
+        background: #e67e22;
+    }
+</style>
+</head>
+<body>
+<div class="calculator">
+    <div class="display" id="display">0</div>
+    <div class="buttons">
+        <button onclick="clearDisplay()">C</button>
+        <button onclick="deleteLast()">⌫</button>
+        <button onclick="appendValue('/')">÷</button>
+        <button onclick="appendValue('*')">×</button>
+
+        <button onclick="appendValue('7')">7</button>
+        <button onclick="appendValue('8')">8</button>
+        <button onclick="appendValue('9')">9</button>
+        <button onclick="appendValue('-')">−</button>
+
+        <button onclick="appendValue('4')">4</button>
+        <button onclick="appendValue('5')">5</button>
+        <button onclick="appendValue('6')">6</button>
+        <button onclick="appendValue('+')">+</button>
+
+        <button onclick="appendValue('1')">1</button>
+        <button onclick="appendValue('2')">2</button>
+        <button onclick="appendValue('3')">3</button>
+        <button onclick="calculate()" class="equal">=</button>
+
+        <button onclick="appendValue('0')" style="grid-column: span 2;">0</button>
+        <button onclick="appendValue('.')">.</button>
+    </div>
+</div>
+
+<script>
+    let display = document.getElementById('display');
+    let currentValue = '';
+
+    function appendValue(value) {
+        if (currentValue === '0' && value !== '.') {
+            currentValue = value;
+        } else {
+            currentValue += value;
+        }
+        display.innerText = currentValue;
+    }
+
+    function clearDisplay() {
+        currentValue = '';
+        display.innerText = '0';
+    }
+
+    function deleteLast() {
+        currentValue = currentValue.slice(0, -1);
+        display.innerText = currentValue || '0';
+    }
+
+    function calculate() {
+        try {
+            currentValue = eval(currentValue).toString();
+            display.innerText = currentValue;
+        } catch (error) {
+            display.innerText = 'Error';
+            currentValue = '';
+        }
+    }
+</script>
+</body>
+</html> -->
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kalkulator Sederhana</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        padding: 20px;
+        background: #FFF5F2;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+    }
+    .container {
+        font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+        max-width: 320px;
+        width: 100%;
+        margin: auto;
+        background: #568F87;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+    }
+    .container .kotak {
+        text-align: center;
+        font-size: 20px;
+        color: white;
+        margin-bottom: 20px;
+        font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    }
+    label {
+        font-weight: bold;
+        display: block;
+        margin-top: 10px;
+        color: white;
+    }
+    input, select {
+        width: 100%;
+        padding: 10px;
+        margin-top: 5px;
+        margin-bottom: 15px;
+        font-size: 1em;
+        border-radius: 10px;
+        border: 1px solid #ccc;
+        box-sizing: border-box;
+    }
+    button {
+        width: 100%;
+        padding: 10px;
+        background: #064232;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 1em;
+        transition: background 0.3s;
+    }
+    button:hover {
+        background: #064232;
+    }
+    .hasil {
+        margin-top: 20px;
+        font-size: 1.2em;
+        font-weight: bold;
+        color: white;
+        text-align: center;
+    }
+</style>
+</head>
+<body>
+<div class="container">
+    <h2 class="kotak">Kalkulator Sederhana</h2>
+    
+    <label>Nilai 1</label>
+    <input type="text" id="nilai1" placeholder="Masukkan angka pertama">
+
+    <label>Nilai 2</label>
+    <input type="text" id="nilai2" placeholder="Masukkan angka kedua">
+
+    <label>Pilih Operasi</label>
+    <select id="operasi">
+        <option value="+">Tambah (+)</option>
+        <option value="-">Kurang (-)</option>
+        <option value="*">Kali (*)</option>
+        <option value="/">Bagi (/)</option>
+    </select>
+
+    <button onclick="hitung()">Proses</button>
+
+    <div class="hasil" id="hasil">Hasil: -</div>
+</div>
+
+<script>
+function hitung() {
+    let n1 = parseFloat(document.getElementById('nilai1').value);
+    let n2 = parseFloat(document.getElementById('nilai2').value);
+    let op = document.getElementById('operasi').value;
+    let hasil = '';
+
+    if (isNaN(n1) || isNaN(n2)) {
+        hasil = 'Masukkan angka yang valid!';
+    } else {
+        switch(op) {
+            case '+': hasil = n1 + n2; break;
+            case '-': hasil = n1 - n2; break;
+            case '*': hasil = n1 * n2; break;
+            case '/': 
+                hasil = n2 !== 0 ? (n1 / n2) : 'Tidak bisa dibagi 0';
+                break;
+        }
+    }
+
+    document.getElementById('hasil').innerText = 'Hasil: ' + hasil;
+}
+</script>
+</body>
+</html>
