@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // Arrow notation adalah cara penulisan singkat untuk membuat fungsi (function).
+        function kuadrat(a) {
+            return a * a;
+        }
+        console.log(kuadrat(5)); // 25
+
+
+        // CONST 
+        const kuadrat = function (a) {
+            return a * a;
+        }
+        console.log(kuadrat(5)); // 25
+
+
+        // ARROW NOTATION 
+        const kuadrat = (a) => {
+            return a * a;
+        }
+        console.log(kuadrat(5)); // 25
+
+        const kuadrat = a => a * a;
+        console.log(kuadrat(5)); // 25
+
+        const kuadrat = a => a * a;
+        console.log(kuadrat(5)); // 25
+
+        const generateRandom = () => Math.floor(Math.random() * 10) + 1;
+        console.log(generateRandom()); // misal: 7
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        const user = "Admin";
+        const raa = (user === "Admin") ? "Welcome, admin" : "User not found";
+
+        console.log(raa); // Welcome, admin
+
+
+        // Contoh 1: user = "Admin"
+        const user1 = "Admin";
+        const raa1 = (user1 === "Admin") ? "Welcome, admin" : "User not found";
+        console.log(`User1: ${user1} → ${raa1}`); // User1: Admin → Welcome, admin
+
+        // Contoh 2: user = "Rudi"
+        const user2 = "Rudi";
+        const raa2 = (user2 === "Admin") ? "Welcome, admin" : "User not found";
+        console.log(`User2: ${user2} → ${raa2}`); // User2: Rudi → User not found
+
+    </script>
+</body>
+
+</html>

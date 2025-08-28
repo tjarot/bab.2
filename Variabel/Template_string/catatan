@@ -1,0 +1,3 @@
+// Template string (dikenal juga dengan istilah template literals atau string interpolation) adalah
+// alternatif penulisan string yang memudahkan kita mengakses variabel serta menjalankan
+// suatu expression saat berada di dalam string.

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let raaUser = "Admin";
+let raaPassword = "qwerty";
+
+// Kondisi salah: password tidak cocok
+(raaUser === "Admin") && (raaPassword === "12345") && console.log("Welcome, admin");
+// Tidak muncul
+
+// Kondisi benar: user dan password cocok
+(raaUser === "Admin") && (raaPassword === "qwerty") && console.log("Welcome, admin");
+// Welcome, admin
+
+    </script>
+</body>
+</html>
