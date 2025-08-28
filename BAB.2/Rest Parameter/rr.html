@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function foo(...args) {
+            return args;
+        }
+
+        console.log(foo(1, 2, 3));                // [1, 2, 3]
+        console.log(foo(3, 5, 7, 9));             // [3, 5, 7, 9]
+        console.log(foo(5, 10, 15, 20, 25, 30));  // [5, 10, 15, 20, 25, 30]
+
+        // ...args disebut rest parameter.
+        // Mengumpulkan semua argumen yang dikirim ke fungsi menjadi array.
+        // Sangat berguna saat jumlah argumen tidak pasti.
+
+
+        function tambah(...args) {
+            let total = 0;
+            for (let angka of args) {
+                total += angka;
+            }
+            return total;
+        }
+
+        console.log(tambah(1, 2, 3));                // 6
+        console.log(tambah(3, 5, 7, 9));             // 24
+        console.log(tambah(5, 10, 15, 20, 25, 30));  // 105
+
+        // Fungsi tambah menggunakan rest parameter ...args untuk menampung semua argumen sebagai array.
+        // for...of digunakan untuk menjumlahkan setiap elemen.
+        // Cocok untuk kasus di mana jumlah input tidak pasti.
+
+
+        const tambah = (a, b, ...args) => {
+            let total = 0;
+            for (const angka of args) { // Nama array rest parameter tidak harus args
+                total += angka;
+            }
+            return total;
+        };
+
+        console.log(tambah(3, 5, 7, 9)); // 16
+
+        // a dan b adalah parameter biasa, sedangkan ...args menangkap sisa argumen.
+        // Dalam contoh ini, args = [7, 9], sehingga total = 7 + 9 = 16.
+        // Bisa digunakan untuk memisahkan beberapa argumen tetap dan sisanya yang fleksibel.
+
+
+        // DESTRUCTURING
+        const arr1 = [10, 20, 30, 40, 50];
+        const [a, b, ...sisa] = arr1;
+
+        console.log(a);    // 10
+        console.log(b);    // 20
+        console.log(sisa); // [30, 40, 50]
+
+        // [a, b, ...sisa] adalah destructuring array dengan rest operator.
+        // a → elemen pertama, b → elemen kedua.
+        // sisa → array berisi semua elemen setelah a dan b.
+    </script>
+</body>
+
+</html>

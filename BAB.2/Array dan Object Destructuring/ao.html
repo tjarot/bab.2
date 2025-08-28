@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // let mahasiswa = ["Andi", "Lisa", "Eko"];
+        // let [a, b, c] = mahasiswa;
+
+        // console.log(a); // Andi
+        // console.log(b); // Lisa
+        // console.log(c); // Eko
+
+        // Baris let [a, b, c] = mahasiswa; disebut array destructuring.
+        // Ia mengambil nilai array secara berurutan dan memasukkannya ke variabel a, b, dan c.
+
+
+        // let mahasiswa = {
+        //     nama: "Eka",
+        //     umur: 19,
+        //     jurusan: "Teknik Informatika",
+        // };
+
+        // let { nama, umur } = mahasiswa;
+
+        // console.log(nama); // Eka
+        // console.log(umur); // 19
+
+        // Ini menggunakan object destructuring.
+        // Variabel nama dan umur langsung diambil dari properti object mahasiswa.
+
+
+        // const dataMahasiswa = () => {
+        //     return { nama: "Eka", umur: 19, jurusan: "Teknik Informatika" };
+        // };
+
+        // let { nama, umur } = dataMahasiswa();
+
+        // console.log(nama); // Eka
+        // console.log(umur); // 19
+
+        // Fungsi dataMahasiswa mengembalikan object.
+        // Lalu kita langsung destructuring hasil return-nya.
+        // Sangat berguna untuk API response atau function yang mengembalikan banyak data.
+
+
+        const dataMahasiswa = () => {
+            return { nama: "Eka", umur: 19, jurusan: "Teknik Informatika" };
+        };
+
+        let { nama: namaMahasiswa, umur: umurMahasiswa } = dataMahasiswa();
+
+        console.log(namaMahasiswa); // Eka
+        console.log(umurMahasiswa); // 19
+
+        // { nama: namaMahasiswa, umur: umurMahasiswa } adalah destructuring dengan alias.
+        // Artinya properti nama dari object dipetakan ke variabel baru namaMahasiswa, begitu juga umur.
+        // Berguna ketika ingin menghindari bentrok nama variabel di kode yang besar.
+    </script>
+</body>
+
+</html>

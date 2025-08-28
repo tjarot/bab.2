@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // let arr = [10, 20, 30, 40];
+
+        // arr.forEach(function (val, key) {
+        //     console.log(`Nilai array di index-${key} adalah ${val}`);
+        // });
+
+        // // Nilai array di index-0 adalah 10
+        // // Nilai array di index-1 adalah 20
+        // // Nilai array di index-2 adalah 30
+        // // Nilai array di index-3 adalah 40
+
+        // forEach mengiterasi setiap elemen dalam array.
+        // Parameter pertama (val) → nilai elemen.
+        // Parameter kedua (key) → indeks elemen.
+        // Sangat berguna untuk menampilkan atau memproses elemen array satu per satu.
+
+
+        // ARROW 
+        // let arr = [10, 20, 30, 40];
+
+        // arr.forEach((val, key) => console.log(`Nilai array di index-${key} adalah ${val}`));
+
+        // // Nilai array di index-0 adalah 10
+        // // Nilai array di index-1 adalah 20
+        // // Nilai array di index-2 adalah 30
+        // // Nilai array di index-3 adalah 40
+
+        // Arrow function membuat forEach lebih ringkas.
+        // val → nilai elemen, key → indeks.
+        // Sama seperti contoh sebelumnya, tapi ditulis dalam satu baris.
+
+
+        // KUADRAT 
+        // let arr = [10, 20, 30, 40];
+        // let arrKuadrat = [];
+
+        // arr.forEach((val) => arrKuadrat.push(val * val));
+
+        // console.log(arrKuadrat); // [100, 400, 900, 1600]
+
+        // forEach digunakan untuk mengiterasi setiap elemen arr.
+        // Setiap elemen dipangkatkan 2 (val * val) dan ditambahkan ke array arrKuadrat.
+        // Cocok untuk membuat array baru dari perhitungan elemen lama.
+
+
+        // MAP => map()
+        let arr = [10, 20, 30, 40];
+        let arrKuadrat = arr.map((val) => val * val);
+
+        console.log(arrKuadrat); // [100, 400, 900, 1600]
+
+        // map membuat array baru berdasarkan hasil dari fungsi callback.
+        // (val) => val * val → setiap elemen val dipangkatkan 2.
+        // Lebih ringkas dan tidak perlu membuat array baru secara manual.
+
+
+        // MAP OBJECT 
+        const mahasiswas = [
+            { nama: "Eka", umur: 19, jurusan: "Teknik Informatika" },
+            { nama: "Lisa", umur: 18, jurusan: "Sistem Informasi" },
+            { nama: "Rudi", umur: 19, jurusan: "Teknik Elektro" }
+        ];
+
+        const prosesMahasiswa = (mahasiswa) =>
+            `<p>${mahasiswa.nama} (${mahasiswa.umur}), ${mahasiswa.jurusan}</p>`;
+
+        const formatMahasiswas = mahasiswas.map(prosesMahasiswa);
+
+        console.log(formatMahasiswas);
+
+        // [
+        // "<p>Eka (19), Teknik Informatika</p>",
+        // "<p>Lisa (18), Sistem Informasi</p>",
+        // "<p>Rudi (19), Teknik Elektro</p>"
+        // ]
+
+        // map digunakan untuk mengubah setiap object mahasiswa menjadi string HTML <p>.
+        // prosesMahasiswa adalah callback yang menentukan format tampilan setiap mahasiswa.
+        // Hasilnya berupa array baru berisi string HTML.
+
+    </script>
+</body>
+
+</html>

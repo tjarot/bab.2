@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // const getUser = () => "Rudi";
+
+        // console.log("Start...");      // Start...
+        // console.log(getUser());       // Rudi
+        // console.log("Finish");        // Finish
+
+        // getUser adalah arrow function tanpa parameter yang mengembalikan string "Rudi".
+        // Urutan eksekusi console.log bersifat sinkron, jadi output akan selalu:
+
+
+        // PROBLEM
+        // const getUser = () => {
+        //     setTimeout(() => "Rudi", 2000);
+        // }
+
+        // console.log("Start...");      // Start...
+        // console.log(getUser());       // undefined
+        // console.log("Finish");        // Finish
+
+        // Fungsi setTimeout asinkron: ia menunda eksekusi callback selama 2000ms, tapi tidak mengembalikan nilai dari fungsi getUser.
+        // Karena itu console.log(getUser()) menampilkan undefined.
+        // console.log("Start...") dan console.log("Finish") dieksekusi sebelum timeout selesai.
+
+
+        const getUser = () => {
+  setTimeout(() => {
+    console.log("processing done!");
+    return "Rudi";
+  }, 2000);
+}
+
+console.log("Start...");
+console.log(getUser());  // undefined
+console.log("Finish");
+
+// setTimeout bersifat asinkron, sehingga fungsi getUser langsung mengembalikan undefined.
+// console.log(getUser()) menampilkan undefined.
+// Setelah 2 detik, callback di setTimeout akan dijalankan dan menampilkan "processing done!", tapi nilai "Rudi" tidak dikembalikan ke luar fungsi.
+
+    </script>
+</body>
+
+</html>

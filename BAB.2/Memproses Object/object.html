@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+
+        // // OBJECT ADDITION
+        // let mahasiswa = {
+        //     nama: "Eka",
+        //     umur: 19,
+        //     jurusan: "Teknik Informatika",
+        //     getInfo() {
+        //         return `${this.nama} (${this.umur} tahun) dari jurusan ${this.jurusan}`;
+        //     }
+        // }
+
+        // console.log(mahasiswa);
+        // // {nama: "Eka", umur: "19", jurusan: "Teknik Informatika", getInfo: ƒ}
+
+        // mahasiswa.umur = 20;
+        // mahasiswa.tempatLahir = "Jakarta";
+
+        // console.log(mahasiswa);
+        // // {nama: "Eka", umur: 20, jurusan: "Teknik Informatika", tempatLahir: "Jakarta", getInfo: ƒ}
+
+
+        // // OBJECT FOR IN
+        // let mahasiswa = {
+        //     nama: "Eka",
+        //     umur: 19,
+        //     jurusan: "Teknik Informatika"
+        // }
+
+        // for (prop in mahasiswa) {
+        //     console.log(`Nilai ${prop} : ${mahasiswa[prop]}`);
+        // }
+
+        // // Nilai nama : Eka
+        // // Nilai umur : 19
+        // // Nilai jurusan : Teknik Informatika
+
+
+        //  Object.keys: menampilkan semua nama key property / method.
+        //  Object.values: menampilkan semua nilai property / method.
+        //  Object.entries: menampilkan semua nama dan nilai property / method.
+
+        // OBJECT METHOD
+        let mahasiswa = {
+            nama: "Eka",
+            umur: 19,
+            jurusan: "Teknik Informatika"
+        }
+
+        console.log(Object.keys(mahasiswa));
+        // ["nama", "umur", "jurusan"]
+
+        console.log(Object.values(mahasiswa));
+        // ["Eka", 19, "Teknik Informatika"]
+
+        console.log(Object.entries(mahasiswa));
+        // [
+        //   ["nama", "Eka"],
+        //   ["umur", 19],
+        //   ["jurusan", "Teknik Informatika"]
+        // ]
+
+    </script>
+
+</body>
+
+</html>

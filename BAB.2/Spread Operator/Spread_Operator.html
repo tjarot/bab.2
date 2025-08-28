@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // ARRAY
+        let arr1 = [10, 20, 30];
+        let arr2 = [100, 200, 300];
+
+        let arr3 = [...arr1, ...arr2];
+        console.log(arr3); // [10, 20, 30, 100, 200, 300]
+
+        let arr4 = [...arr1, 40, 50];
+        console.log(arr4); // [10, 20, 30, 40, 50]
+
+        let arr5 = [30, 40, 50, ...arr1];
+        console.log(arr5); // [30, 40, 50, 10, 20, 30]
+
+        // Operator ... disebut spread operator.
+        // Digunakan untuk:
+        // 1. Menggabungkan array.
+        // 2. Menambahkan elemen baru di awal, tengah, atau akhir.
+        // 3. Menyalin array tanpa mengubah array asli (shallow copy).
+
+
+        // // OBJECT
+        // let mahasiswa = {
+        //     nama: "Eka",
+        //     umur: 19,
+        //     jurusan: "Teknik Informatika"
+        // };
+
+        // let mahasiswa1 = {
+        //     ...mahasiswa,
+        //     umur: 20,
+        //     tempatLahir: "Jakarta"
+        // };
+
+        // console.log(mahasiswa1);
+        // // {nama: "Eka", umur: 20, jurusan: "Teknik Informatika", tempatLahir: "Jakarta"}
+
+        // ...mahasiswa → spread operator untuk menyalin semua properti dari object mahasiswa.
+        // umur: 20 → menimpa properti umur yang lama.
+        // tempatLahir: "Jakarta" → menambahkan properti baru.
+
+
+        // ADDITION
+        // let mahasiswa = {
+        //     nama: "Eka",
+        //     umur: 19,
+        //     jurusan: "Teknik Informatika"
+        // };
+
+        // let umur = 20;
+        // let tempatLahir = "Jakarta";
+
+        // let mahasiswa1 = {
+        //     ...mahasiswa,
+        //     umur: umur,
+        //     tempatLahir: tempatLahir
+        // };
+
+        // console.log(mahasiswa1);
+        // {nama: "Eka", umur: 20, jurusan: "Teknik Informatika", tempatLahir: "Jakarta"}
+
+        // ...mahasiswa menyalin semua properti dari object mahasiswa.
+        // Properti umur dan tempatLahir ditambahkan/ditimpa dengan nilai dari variabel.
+        // Ini berguna untuk menggabungkan object dengan variabel.
+
+
+
+        // ADDITION YG LEBIH SINGKAT 
+        let mahasiswa = {
+            nama: "Eka",
+            umur: 19,
+            jurusan: "Teknik Informatika"
+        };
+
+        let umur = 20;
+        let tempatLahir = "Jakarta";
+
+        let mahasiswa1 = {
+            ...mahasiswa,
+            umur,         // shorthand untuk umur: umur
+            tempatLahir   // shorthand untuk tempatLahir: tempatLahir
+        };
+
+        console.log(mahasiswa1);
+        // {nama: "Eka", umur: 20, jurusan: "Teknik Informatika", tempatLahir: "Jakarta"}
+
+        // Menulis kode lebih ringkas.
+        // Mudah dibaca, terutama saat properti object sama dengan nama variabel.
+
+    </script>
+</body>
+
+</html>

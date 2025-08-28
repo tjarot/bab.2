@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // RESOLVE
+        // const getUser = () => {
+        //     return new Promise((resolve, reject) => {
+        //         setTimeout(() => {
+        //             resolve("Rudi");
+        //             // reject("Something wrong...");
+        //         }, 2000);
+        //     });
+        // }
+
+        // const tryGetName = async () => {
+        //     let userName = await getUser();
+        //     console.log(userName);
+        // };
+
+        // console.log("Start...");
+        // tryGetName();
+        // console.log("Finish");
+
+        // getUser mengembalikan Promise yang berhasil (resolve("Rudi")) setelah 2 detik.
+        // Fungsi tryGetName menggunakan async/await sehingga menunggu getUser() selesai sebelum mengeksekusi console.log(userName).
+
+
+        // REJECT 
+        const getUser = () => {
+            return new Promise((resolve, reject) => {
+                setTimeout(() => {
+                    // resolve("Rudi");
+                    reject("Something wrong...");
+                }, 2000);
+            });
+        }
+
+        const tryGetName = async () => {
+            try {
+                let userName = await getUser();
+                console.log(userName);
+            } catch (error) {
+                console.log(error);
+            }
+        };
+
+        console.log("Start...");
+        tryGetName();
+        console.log("Finish");
+
+        // getUser mengembalikan Promise yang gagal (reject("Something wrong...")) setelah 2 detik.
+        // Fungsi tryGetName menggunakan async/await dan try/catch untuk menangani error.
+
+    </script>
+</body>
+
+</html>
